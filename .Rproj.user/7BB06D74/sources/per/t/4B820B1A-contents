@@ -1,0 +1,11 @@
+#entrenar previamente un modelo
+library(caret)
+
+data(iris)
+dim(iris)
+dimnames(iris)[2]
+modelo <- train(Species~., data=iris, 
+             method="rf",
+             trControl=trainControl(
+               method="cv",number=10))
+save(modelo,file="mimodeloiris")

@@ -1,0 +1,15 @@
+#DESPLIEGUE DE MODELOS (permite interactuar con los modelos que ya tenemos definidos en R)
+
+#install.packages(plumber)
+library(plumber) #libreria
+getwd()
+setwd("C:/Users/bmuniz/Desktop/API sobre Iris con plumber")
+
+#para activar los servicios que estan en el fichero (donde tenemos los servicios de la API)
+r <- plumb("plumber.R")  # Where 'plumber.R' is the location of the file shown above
+#acaba de arranchar el fichero llamado plumber.R, a la espera de lo que le diga, con los servicios que tiene dentro
+r$run(port=8008) #ubicar el directorio y no se pierda
+
+#otra opci?n para activar la API es desde el fichero plumber.R
+
+
